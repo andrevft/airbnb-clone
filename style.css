@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800;900&display=swap');
+
+
+* {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  width: 100%;
+  list-style: none;
+  font-family:  "Montserrat";
+  font-size: 14px;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100%;
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  border: 0;
+}
+
+button {
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+@keyframes HeaderFromTop {
+  0% {
+    transform: translateY(-300px);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateY(15px);
+    opacity: 1;
+  }
+
+  60% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+
+  70% {
+    transform: translateY(5px);
+    opacity: 1;
+  }
+
+  80% {
+    transform: translateY(-5px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+
+  /* ====== ** HEADER ** =============================================================== */
+  /* =================================================================================== */
+
+  header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  height: 78px;
+  padding: 0 24px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+  animation: HeaderFromTop 1s;
+  background-color: #ffffff;
+  z-index: 9;
+  position: fixed;
+  top: 0;
+  box-shadow: 0 0 2px rgb(224, 224, 224);
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  width: 95px;
+}
+
+header nav ul{
+  list-style-type: none;
+  cursor: default;
+}
+
+
+/* HEADER - INFO */
+.header-filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 48px;
+
+  margin: 0 24px;
+
+  border-radius: 21px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.18);
+
+  font-weight: bold;
+
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+.header-filter:hover {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+
+
+.header-filter > div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-right: 1px solid rgba(0, 0, 0, 0.18);
+  padding: 5px 16px;
+  height: 100%;
+
+  min-width: 0px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.header-filter > div:last-child {
+  border-right: 0;
+}
+
+.header-filter--place {
+}
+
+.header-filter--date {
+}
+
+.header-filter--input {
+}
+
+.header-filter--input::placeholder {
+  font-size: 12px;
+}
+
+.header-filter--button {
+}
+
+.header-filter--button > button > i {
+  color: #ff385c;
+}
+
+.navbar-menu ul {
+display: flex;
+flex-direction: row;
+justify-content: flex-end;
+border: 1px solid black;
+}
+
+
+
+  /* ====== ** MAIN ** =============================================================== */
+  /* =================================================================================== */
+
+main{
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+  padding-left: 20px;
+}
+
+.full-content{
+display: flex;
+flex-direction: row;
+
+}
+
+
+
+
+
+.room-board {
+  display: flex;
+  flex-direction: column;
+  max-width: 650px;
+
+  }
+
+  .room-board-sets {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    max-width: 700px;
+  }
+
+  .room-board-sets p{
+    font-size: 12px;
+  
+    }
+  
+    .room-board-sets h1{
+    font-size: 30px;
+    margin-top: 10px;
+  
+    }
+    
+  .room-board-filter{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    max-width: 700px;
+
+  }
+
+.room-board-filter button{
+  background-color: white;
+  border: 1px solid #b0b0b0;
+  border-radius: 20px;
+  color: rgb(92, 92, 92);
+  margin: 3px;
+  font-size: 10px;
+  }
+
+  .room-board-filter button:hover{
+
+    border: 1px solid #4d4d4d;
+
+    }
+  
+.room-card {
+  display: flex;
+  flex-direction: row;
+
+  margin: 15px;
+  padding: 0px;
+
+  }
+
+
+  .room-div-img {
+    width: 350px;
+    margin-right: 15px;
+
+  }
+
+  .room-img {
+    width: 300px;
+    border-radius: 10px;
+  }
+
+  .room-description{
+    width: ;
+    height: 170px;
+
+  }
+
+.room-price{
+  float: right;
+  align-self: flex-end;
+  align-items: flex-end
+ 
+}
+
+  hr { 
+    border-top: 1px solid #e6e6e6;
+  } 
+  
+  #mapid { height: 180px; }
+  /* ====== ** FOOTER ** =============================================================== */
+  /* =================================================================================== */
+
+
+footer{
+display: flex;
+flex-direction: column;
+background-color: white;
+list-style: none;
+padding: 20px;
+margin-right: 100px;
+
+
+}
