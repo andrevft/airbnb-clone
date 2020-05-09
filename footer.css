@@ -14,7 +14,7 @@
 
 div{
 
-  border: 0px dotted red;
+  border: 1px dotted red;
   }
 
 html {
@@ -23,6 +23,7 @@ html {
 
 body {
   height: 100%;
+  width: 100%;
   font-size: 14px;
 }
 
@@ -69,24 +70,33 @@ button {
   /* ====== ** HEADER ** =============================================================== */
   /* =================================================================================== */
 
-.navbar-bg {
+  header{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  box-sizing: border-box;
   justify-content: space-between;
   align-items: center;
-  margin: 0px 0px;
-  background-color: #ffffff;
-  box-shadow: 0 0 2px rgb(224, 224, 224);
   width: 100%;
+  margin: 0 0px;
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+  background-color: #ffffff;
+  position: fixed;
+  top: 0;
+  box-shadow: 0 0 2px rgb(224, 224, 224);
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   padding: 15px 24px;
 }
 
 .nav-logo {
   max-width: 95px;
   min-width: 50px;
-  height: auto;
 }
 
 
@@ -149,33 +159,28 @@ font-size: 1px;
 
 
   /* ====== ** MAIN ** =============================================================== */
+  /* =================================================================================== */
+
+main{
+  display: flex;
+  flex-direction: column;
 
 
-.main-content{
+}
+
+.full-content{
 display: flex;
 flex-direction: row;
-margin-top: 10px;
-max-width: 100%;
-
+margin-top: 80px;
+max-width: 90%;
 }
 
-.fa {
-  font-size: 50px;
-  cursor: pointer;
-  user-select: none;
-}
 
-.fa:hover {
-  color: darkblue;
-}
 
 .room-board {
   display: flex;
   flex-direction: column;
-  max-width: 750px;
-  padding-left: 15px;
-  margin-right: 30px;
-
+  max-width: 600px;
 
   }
 
@@ -244,10 +249,8 @@ max-width: 100%;
 }
 
 .room-description{
-display: flexbox ;
-flex-direction: column;
-justify-content: space-between;
-height: 100%;
+  width: ;
+  height: 170px;
 
 }
 
@@ -262,20 +265,7 @@ hr {
   border-top: 1px solid #e6e6e6;
 } 
 
-.map-content{
-  display: flex;
-  flex-direction: column;
-  align-content: flex-end;
-  max-width: 600px;
-
-
-
-}
-
-#mapid { 
-  width: 100%; 
-  height: 600px;
-  margin-top: 50px;}
+#mapid { height: 180px; }
   
   /* ====== ** FOOTER ** =============================================================== */
   /* =================================================================================== */

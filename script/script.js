@@ -6,7 +6,7 @@ async function fetchData() {
 	let lista = rooms.map(room => `<div class="room-card row">
 									<div class="room-div-img"><img class="room-img" src="${room.photo}" class="room-img"/></div>
 									<div class="room-description">
-									<div class="room-type">${room.property_type}</div>
+									<div class="room-type">${room.property_type} <i onclick="myFunction(this)" class="fa fa-thumbs-up"></i></div>
 									<div class="room-name">${room.name}</div>
 									<div class="room-price"><p><strong>R$ ${room.price}</strong>/noite</p></div>
 									</div>

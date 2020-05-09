@@ -12,56 +12,40 @@
   <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
   <link rel="stylesheet" href="style.css">
   <script src="https://kit.fontawesome.com/4b9780a374.js" crossorigin="anonymous"></script>
-   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-   crossorigin=""/>
-   <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-   crossorigin=""></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
 </head>
 
-<body class="">
+<body>
 
-  <header>
+  <header class="navbar-bg">
+
     <!--  Navbar start -->
-    <nav class="">
-      <div class="navbar">
 
-        <a class="" href="index.html"><img class="nav-logo" src="./img/airbnb-logo.svg" alt="Logo Airbnb"></a>
+    <!--  Navbar Logo -->
+    <div class="nav-logo">
+      <a class="" href="index.html"><img class="" src="./img/airbnb-logo.svg" alt="Logo Airbnb"></a>
+    </div>
 
+    <!--  Navbar Filter -->
+    <div class="navbar-filter">
+      <div class="navbar-filter-place">São Paulo, Brasil</div>
+      <div class="navbar-filter-date">16 de mai. - 27 de jun.</div>
+      <div class="navbar-filter-input"> 1 hóspede </div>
+      <div class="navbar-filter-button"> <button><i class="fas fa-search"></i></button></div>
+    </div>
 
-        <div class="header-filter">
-          <div class="header-filter--place">São Paulo, Brasil</div>
-          <div class="header-filter--date">16 de mai. - 27 de jun.</div>
-          <div class="header-filter--input"> 1 hóspede </div>
+    <!--  Navbar Menu List -->
+    <div class="navbar-menu" id="">
+      <div><a class="" href="#" id=""><i class="fas fa-globe"></i></a></div>
+      <div><a class="" href="#">Ajuda</a></div>
+      <div><a class="" href="#">Cadastre-se</a></div>
+    </div>
 
-          <div class="header-filter--button">
-            <button>
-              <i class="fas fa-search"></i>
-            </button>
-          </div>
-        </div>
-
-
-
-
-        <div class="navbar-menu" id="">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item dropdown">
-              <a class="" href="#" id="">
-                <i class="fas fa-globe"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-dark" href="#">Ajuda</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-dark btn btn-outline-secondary" href="#">Cadastre-se</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
     <!--  Navbar End -->
 
   </header>
@@ -69,142 +53,55 @@
 
 
 
-  <main>
-    <div class="full-content">
+  <main class="main-content">
 
-      <div>
-        <div class="room-board-sets">
-          <p>Mais de 300 acomodações · 7 de mai. - 8 de mai. · 1 hóspede</p>
-          <h1>Acomodações em São Paulo</h1>
-        </div>
-        <div class="room-board-filter">
-          <button>Flexibilidade de cancelamento</button>
-          <button> Tipo de lugar</button>
-          <button> Preço</button>
-          <button>Reserva Instantânea</button>
-          <button>Mais filtros</button>
-        </div>
-        <!--  Romms Available Cards JSON Start-->
+    <section class="room-board">
+      <div class="room-board-sets">
+        <p>Mais de 300 acomodações · 7 de mai. - 8 de mai. · 1 hóspede</p>
+        <h1>Acomodações em São Paulo</h1>
+      </div>
+      <div class="room-board-filter">
+        <button>Flexibilidade de cancelamento</button>
+        <button> Tipo de lugar</button>
+        <button> Preço</button>
+        <button>Reserva Instantânea</button>
+        <button>Mais filtros</button>
+      </div>
+      <!--  Romms Available Cards JSON Start-->
 
-        <div id="the-rooms">Carregando...</div>
-        <!-- Romms Available Cards JSON End -->
-      </div>
-      <div class="sticky-map">
-        <div id="mapid"></div>
-      </div>
-    </div>
+      <div id="the-rooms">Carregando...</div>
+      <!-- Romms Available Cards JSON End -->
+    </section>
+    <section class="map-content">
+      <div id="mapid"></div>
+    </section>
+    <script>
+
+      var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+
+      L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+        maxZoom: 18,
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+          '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+          'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        id: 'mapbox/streets-v11',
+        tileSize: 512,
+        zoomOffset: -1
+      }).addTo(mymap);
+
+    </script>
+
 
   </main>
 
 
-  <footer class="container-fluid">
-    <div class="container">
-      <div class="_1vdnpag row">
-        <section class="_1l3ys1i col-md-3 ">
-          <h4 class="footer-topics">Sobre</h4>
-          <ul class="_1g6uxjq">
-            <li class="footer-data"><a href="/diversity" class="_o06542u">Diversidade e pertencimento</a></li>
-            <li class="footer-data"><a href="/accessibility" class="_o06542u">Acessibilidade</a></li>
-            <li class="footer-data"><a href="/trust" class="_o06542u">Confiança e segurança</a></li>
-            <li class="footer-data"><a rel="noopener noreferrer" target="_blank"
-                href="https://www.airbnbcitizen.com/?utm_source=airbnb&amp;utm_medium=footer&amp;utm_campaign=product"
-                class="_o06542u">Airbnb Citizen</a></li>
-            <li class="footer-data"><a href="/press/news" class="_o06542u">Newsroom</a></li>
-          </ul>
-        </section>
-        <section class="_1l3ys1i col-md-3">
-          <h4 class="footer-topics">Comunidade</h4>
-          <ul class="_1g6uxjq">
-            <li class="footer-data"><a href="/magazine" class="_o06542u">Airbnb Magazine</a></li>
-            <li class="footer-data"><a href="/work?s=footer" class="_o06542u">Airbnb for Work</a></li>
-            <li class="footer-data"><a href="/invite?r=6" class="_o06542u">Convide amigos</a></li>
-            <li class="footer-data"><a href="/careers" class="_o06542u">Carreiras</a></li>
-          </ul>
-        </section>
-        <section class="_1l3ys1i col-md-3">
-          <h4 class="footer-topics">Anfitrião</h4>
-          <ul class="_1g6uxjq">
-            <li class="footer-data"><a href="/host/homes?from_footer=1" class="_o06542u">Hospede em sua acomodação</a>
-            </li>
-            <li class="footer-data"><a href="/host/experiences?from_footer=1" class="_o06542u">Ofereça uma
-                experiência</a></li>
-            <li class="footer-data"><a href="/help/responsible-hosting" class="_o06542u">Hospedagem responsável</a></li>
-            <li class="footer-data"><a href="/openhomes?from_footer=1" class="_o06542u">Open Homes</a></li>
-            <li class="footer-data"><a href="/d/olympics" class="_o06542u">Olimpíadas</a></li>
-            <li class="footer-data"><a href="/resources" class="_o06542u">Central de Recursos</a></li>
-          </ul>
-        </section>
-        <section class="_1l3ys1i col-md-3">
-          <h4 class="footer-topics">Atendimento</h4>
-          <ul class="_1g6uxjq">
-            <li class="footer-data"><a href="/help?from=footer" class="_o06542u">Central de Ajuda</a></li>
-            <li class="footer-data"><a href="/neighbors" class="_o06542u">Atendimento ao Bairro</a></li>
-          </ul>
-        </section>
-      </div>
+  <footer>
 
-      <div class="_1wsqynx row">
-        <div class="_1tu1axq row">
-          <div class="_1m14l43 row">
-            <div class="_3hmsj row">
-              <div class="_jro6t0"><span class="_19c5bku"><a data-no-client-routing="true"
-                    href="/account-settings/language" class="_1kejnocv"><span class="_14tkmhr"><svg aria-hidden="true"
-                        role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"
-                        style="display: block; height: 16px; width: 16px; fill: currentcolor;">
-                        <path
-                          d="M1.24 11.251h3.307c.323 1.698.898 3.14 1.656 4.032a7.515 7.515 0 0 1-4.964-4.032zm13.52 0a7.516 7.516 0 0 1-4.962 4.032c.757-.892 1.332-2.334 1.655-4.033zm-4.849 0C9.473 13.298 8.685 14.75 8 14.75s-1.473-1.452-1.911-3.5zm.242-5.001a15.91 15.91 0 0 1 0 3.501H5.847a15.91 15.91 0 0 1 0-3.501zm5.142 0a7.52 7.52 0 0 1 0 3.5h-3.629a18.251 18.251 0 0 0 0-3.5zm-14.59 0h3.628a18.252 18.252 0 0 0 0 3.5H.706a7.52 7.52 0 0 1 0-3.5zM9.798.717A7.516 7.516 0 0 1 14.76 4.75h-3.307c-.308-1.612-.841-2.993-1.542-3.892zm-3.596 0c-.757.893-1.332 2.334-1.656 4.034L1.24 4.75A7.517 7.517 0 0 1 6.119.738zM8 1.25c.685 0 1.473 1.452 1.911 3.5H6.09c.437-2.048 1.225-3.5 1.91-3.5z">
-                        </path>
-                      </svg></span><span class="_bjxj6b"><span class="_krjbj">Escolha um idioma</span>Português
-                      (BR)</span></a></span><span class="_19c5bku"><a data-no-client-routing="true"
-                    href="/account-settings/currency" class="_1kejnocv"><span class="_14tkmhr">R$</span><span
-                      class="_bjxj6b"><span class="_krjbj">Escolha uma moeda</span>BRL</span></a></span></div>
-            </div>
-            <div class="_2ms5qb row">
-              <ul class="_115qwnm">
-                <li class="_kdkpwk"><a rel="noopener noreferrer" target="_blank"
-                    href="https://www.facebook.com/AirbnbBrasil" class="_s7cvp1u"><svg viewBox="0 0 32 32" role="img"
-                      aria-label="Acessar Facebook" focusable="false"
-                      style="height: 18px; width: 18px; display: block; fill: currentcolor;">
-                      <path
-                        d="m8 14.41v-4.17c0-.42.35-.81.77-.81h2.52v-2.08c0-4.84 2.48-7.31 7.42-7.35 1.65 0 3.22.21 4.69.64.46.14.63.42.6.88l-.56 4.06c-.04.18-.14.35-.32.53-.21.11-.42.18-.63.14-.88-.25-1.78-.35-2.8-.35-1.4 0-1.61.28-1.61 1.73v1.8h4.52c.42 0 .81.42.81.88l-.35 4.17c0 .42-.35.71-.77.71h-4.21v16c0 .42-.35.81-.77.81h-5.21c-.42 0-.8-.39-.8-.81v-16h-2.52a.78.78 0 0 1 -.78-.78"
-                        fill-rule="evenodd"></path>
-                    </svg></a></li>
-                <li class="_kdkpwk"><a rel="noopener noreferrer" target="_blank" href="https://twitter.com/airbnb_br"
-                    class="_s7cvp1u"><svg viewBox="0 0 32 32" role="img" aria-label="Acessar Twitter" focusable="false"
-                      style="height: 18px; width: 18px; display: block; fill: currentcolor;">
-                      <path
-                        d="m31 6.36c-1.16.49-2.32.82-3.55.95 1.29-.76 2.22-1.87 2.72-3.38a13.05 13.05 0 0 1 -3.91 1.51c-1.23-1.28-2.75-1.94-4.51-1.94-3.41 0-6.17 2.73-6.17 6.12 0 .49.07.95.17 1.38-4.94-.23-9.51-2.6-12.66-6.38-.56.95-.86 1.97-.86 3.09 0 2.07 1.03 3.91 2.75 5.06-1-.03-1.92-.3-2.82-.76v.07c0 2.89 2.12 5.42 4.94 5.98-.63.17-1.16.23-1.62.23-.3 0-.7-.03-1.13-.13a6.07 6.07 0 0 0 5.74 4.24c-2.22 1.74-4.78 2.63-7.66 2.63-.56 0-1.06-.03-1.43-.1 2.85 1.84 6 2.76 9.41 2.76 7.29 0 12.83-4.01 15.51-9.3 1.36-2.66 2.02-5.36 2.02-8.09v-.46c-.03-.17-.03-.3-.03-.33a12.66 12.66 0 0 0 3.09-3.16"
-                        fill-rule="evenodd"></path>
-                    </svg></a></li>
-                <li class="_kdkpwk"><a rel="noopener noreferrer" target="_blank" href="https://instagram.com/airbnb"
-                    class="_s7cvp1u"><svg viewBox="0 0 24 24" role="img" aria-label="Acessar Instagram"
-                      focusable="false" style="height: 18px; width: 18px; display: block; fill: currentcolor;">
-                      <path
-                        d="m23.09.91c-.61-.61-1.33-.91-2.17-.91h-17.84c-.85 0-1.57.3-2.17.91s-.91 1.33-.91 2.17v17.84c0 .85.3 1.57.91 2.17s1.33.91 2.17.91h17.84c.85 0 1.57-.3 2.17-.91s.91-1.33.91-2.17v-17.84c0-.85-.3-1.57-.91-2.17zm-14.48 7.74c.94-.91 2.08-1.37 3.4-1.37 1.33 0 2.47.46 3.41 1.37s1.41 2.01 1.41 3.3-.47 2.39-1.41 3.3-2.08 1.37-3.41 1.37c-1.32 0-2.46-.46-3.4-1.37s-1.41-2.01-1.41-3.3.47-2.39 1.41-3.3zm12.66 11.63c0 .27-.09.5-.28.68a.92.92 0 0 1 -.67.28h-16.7a.93.93 0 0 1 -.68-.28.92.92 0 0 1 -.27-.68v-10.13h2.2a6.74 6.74 0 0 0 -.31 2.05c0 2 .73 3.71 2.19 5.12s3.21 2.12 5.27 2.12a7.5 7.5 0 0 0 3.75-.97 7.29 7.29 0 0 0 2.72-2.63 6.93 6.93 0 0 0 1-3.63c0-.71-.11-1.39-.31-2.05h2.11v10.12zm0-13.95c0 .3-.11.56-.31.77a1.05 1.05 0 0 1 -.77.31h-2.72c-.3 0-.56-.11-.77-.31a1.05 1.05 0 0 1 -.31-.77v-2.58c0-.29.11-.54.31-.76s.47-.32.77-.32h2.72c.3 0 .56.11.77.32s.31.47.31.76z"
-                        fill-rule="evenodd"></path>
-                    </svg></a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="_zyu73r row">
-            <div class="_pd8gea row">
-              <div class="_9q359r">
-                <div class="_1br4kkl" dir="ltr">© 2020 Airbnb, Inc. All rights reserved</div>
-                <div class="_opoa3c"><span class="_j8ldew"><span class="_10wqwyj" aria-hidden="true">·</span></span><a
-                    href="/terms/privacy_policy" class="_o06542u">Privacidade</a><span class="_10wqwyj"
-                    aria-hidden="true">·</span><a href="/terms" class="_o06542u">Termos</a><span class="_10wqwyj"
-                    aria-hidden="true">·</span><a href="/sitemaps/v2" class="_o06542u">Mapa do site</a></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </footer>
 
 
-  <script src="script.js"></script>
-
+  <script src="script/script.js"></script>
+  <script src="script/likeclick.js"></script>
 
 </body>
 
