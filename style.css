@@ -9,6 +9,7 @@
   list-style: none;
   font-family:  "Montserrat";
   font-size: 14px;
+  box-sizing: border-box ;
 }
 
 
@@ -27,6 +28,7 @@ body {
 }
 
 a {
+
   text-decoration: none;
   text-decoration-line: none;
   color: #222228 ;
@@ -36,6 +38,11 @@ a:hover {
   text-decoration: none;
   text-decoration-line: underline;
   color: #414147;
+}
+
+img{
+  display: block;
+  max-width: 100%;
 }
 
 ul {
@@ -73,20 +80,20 @@ button {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  box-sizing: border-box;
   justify-content: space-between;
   align-items: center;
   margin: 0px 0px;
   background-color: #ffffff;
   box-shadow: 0 0 2px rgb(224, 224, 224);
   width: 100%;
-  padding: 15px 24px;
+  padding: 25px 24px 10px 24px;
 }
 
 .nav-logo {
   max-width: 95px;
   min-width: 50px;
   height: auto;
+  margin: 0 10px 10px 10px;
 }
 
 
@@ -95,15 +102,15 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 600px;
+  max-width: 500px;
   height: 30px;
-  margin: 0 15px;
   border-radius: 21px;
   box-shadow: 0px 1px 2px rgba(143, 143, 143, 0.18);
   font-size: 8px;
   font-weight: bold;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
+  margin: 0 10px 10px 10px;
 }
 
 .navbar-filter:hover {
@@ -145,32 +152,35 @@ justify-content: flex-end;
 text-align: center;
 float: right;
 font-size: 1px;
+margin: 0 10px 10px 10px;
 }
 
 
   /* ====== ** MAIN ** =============================================================== */
-
+  /* ====== ========== =============================================================== */
 
 .main-content{
 display: flex;
 flex-direction: row;
+flex-wrap: wrap;
 margin-top: 10px;
 max-width: 100%;
 
 }
 
-.fa {
-  font-size: 50px;
+.far {
+  font-size: 20px;
   cursor: pointer;
   user-select: none;
 }
 
 .fa:hover {
-  color: darkblue;
+  color: rgb(248, 19, 107);
 }
 
 .room-board {
   display: flex;
+  flex: 1 1 300px;
   flex-direction: column;
   max-width: 750px;
   padding-left: 15px;
@@ -201,6 +211,7 @@ max-width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  flex-wrap: wrap;
   margin-bottom: 20px;
   margin-top: 20px;
   max-width: 100%;
@@ -211,9 +222,13 @@ max-width: 100%;
   background-color: white;
   border: 1px solid #b0b0b0;
   border-radius: 20px;
+  flex: 1 1 100px;
+  height: 40px;
+  max-width: 130px;
   color: rgb(92, 92, 92);
   margin: 3px;
-  font-size: 10px;
+  display: block;
+  font-size: 12px;
   }
 
 .room-board-filter button:hover{
@@ -222,9 +237,10 @@ max-width: 100%;
 
   }
   
-.room-card {
+.room-board-card {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   width: 100%;
   margin: 15px 0;
   padding: 0px;
@@ -233,14 +249,16 @@ max-width: 100%;
 
 
 .room-div-img {
-  width: 350px;
+  max-width: 375px;
   margin-right: 15px;
-
+  flex: 1 1 200px;
+  padding-bottom: 10px;
 }
 
 .room-img {
-  width: 300px;
+  max-width: 375px;
   border-radius: 10px;
+
 }
 
 .room-description{
@@ -248,13 +266,33 @@ display: flexbox ;
 flex-direction: column;
 justify-content: space-between;
 height: 100%;
+max-width: 375px;
+flex: 12 1 200px;
 
 }
 
+.room-type{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: auto;
+  padding-bottom: 20px;
+}
+.room-type p{
+ text-align: left;
+}
+.room-type spam{
+  text-align: right;
+  }
+
+.room-name{
+  padding-bottom: 20px;
+}
+
 .room-price{
-float: right;
-align-self: flex-end;
-align-items: flex-end
+padding-top: 40px;
+
+text-align: end;
 
 }
 
@@ -267,6 +305,7 @@ hr {
   flex-direction: column;
   align-content: flex-end;
   max-width: 600px;
+  flex: 1 1 300px;
 
 
 
