@@ -300,6 +300,7 @@ max-width: 100%;
 display: flexbox ;
 flex-direction: column;
 justify-content: space-between;
+align-content: stretch;
 height: 100%;
 max-width: 375px;
 flex: 2 1 200px;
@@ -311,7 +312,7 @@ flex: 2 1 200px;
   flex-direction: row;
   justify-content: space-between;
   margin: auto;
-  padding-bottom: 20px;
+  padding-bottom: 15px;
   color: #414040;
   font-size: 16px;
   flex: 2;
@@ -326,7 +327,7 @@ flex: 2 1 200px;
 
 .room-name{
   display: flex;
-  padding-bottom: 20px;
+  padding-bottom: 15px;
   color: #000000;
   font-size: 19px;
   flex: 2;
@@ -334,14 +335,15 @@ flex: 2 1 200px;
 
 .room-assets{
   display: flex;
+  flex-direction: column;
   color: #414040;
-  font-size: 14px;
+  font-size: 12px;
   flex: 2;
 }
 
 .room-price{
   display: flex;
-padding-top: 40px;
+padding-top: 25px;
 align-self: flex-end;
 text-align: end;
 font-size: 17px;
