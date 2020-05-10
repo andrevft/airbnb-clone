@@ -83,7 +83,7 @@ button {
   align-items: center;
   margin: 0px auto;
   background-color: #ffffff;
-  box-shadow: 0 0 2px rgb(224, 224, 224);
+  box-shadow: 0 0 6px rgb(224, 224, 224);
   width: 100%;
   padding: 25px 24px 10px 24px;
 }
@@ -100,6 +100,7 @@ button {
   min-width: 50px;
   height: auto;
   margin: 0 10px 10px 10px;
+  text-align: center;
 
 }
 
@@ -165,6 +166,28 @@ font-size: 13px;
 margin: 0 10px 10px 10px;
 }
 
+.globe {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  }
+
+  .cadastro{
+    border: 1px solid lightgray;
+    border-radius: 20px;
+    padding: 8px;
+    box-shadow: 0 2px 1px rgb(214, 214, 214);
+
+  }
+  .cadastro:hover{
+    border: 1px solid lightgray;
+    border-radius: 20px;
+    box-shadow: 0 1px 6px rgb(214, 214, 214);
+    text-decoration-line: none;
+
+  }
 
   /* ====== ** MAIN ** =============================================================== */
   /* ====== ========== =============================================================== */
@@ -179,14 +202,16 @@ max-width: 100%;
 }
 
 .far {
-  font-size: 20px;
+  font-size: 25px;
   cursor: pointer;
   user-select: none;
+  color: #636363;
 }
 
-.fa:hover {
+.far:hover {
   color: rgb(248, 19, 107);
 }
+
 
 .room-board {
   display: flex;
@@ -289,6 +314,7 @@ flex: 2 1 200px;
   padding-bottom: 20px;
   color: #414040;
   font-size: 16px;
+  flex: 2;
 }
 .room-type p{
  text-align: left;
@@ -299,21 +325,27 @@ flex: 2 1 200px;
   }
 
 .room-name{
+  display: flex;
   padding-bottom: 20px;
   color: #000000;
   font-size: 19px;
+  flex: 2;
 }
 
 .room-assets{
+  display: flex;
   color: #414040;
   font-size: 14px;
+  flex: 2;
 }
 
 .room-price{
+  display: flex;
 padding-top: 40px;
 align-self: flex-end;
 text-align: end;
 font-size: 17px;
+flex: 1;
 
 }
 
@@ -327,6 +359,7 @@ hr {
   align-content: flex-end;
   max-width: 600px;
   flex: 1 1 300px;
+
 }
 
 #mapid { 
@@ -361,4 +394,11 @@ width: 50px;
 display: flex;
 flex-direction: row;
 margin: 10px auto;
+}
+
+.disclaimer{
+padding: 20px 40px 5px 40px;
+color: #4d4d4d;
+font-size: 13px;
+
 }
