@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 
 <head>
 
@@ -10,17 +10,22 @@
   <link rel="shortcut icon" href="" />
   <title>Aluguéis por Temporada, Acomodações, Experiências e Lugares - Airbnb Clone</title>
   <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-  <link rel="stylesheet" href="style/style.css">
-  <script src="https://kit.fontawesome.com/4b9780a374.js" crossorigin="anonymous"></script>
+
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
     integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
     crossorigin="" />
   <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
     integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-    crossorigin=""></script>
+    crossorigin="">
+  </script>
+  <script src="https://kit.fontawesome.com/aefa4e46e6.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style/main.css" />
+  <link rel="stylesheet" href="./style/style.css" />
 </head>
 
 <body>
+
 
   <header class="navbar-bg">
 
@@ -53,9 +58,33 @@
 
 
 
+
+
+
+  
+
   <main class="main-content">
 
+
+    
+
+
     <section class="room-board">
+
+
+      <section class="navbar">
+        <div class="navbar-container">
+          <div class="search-container">
+            <div class="filter-container">
+              <label class="filter-label" for="filter">Localização: </label>
+              <input id="filter" class="filter-input" placeholder="Para onde você vai?"></input>
+              <!--input de filtragem-->
+            </div>
+            <button id='search-button' class="search-button"><i class="fas fa-search"></i> Buscar</button>
+          </div>
+        </div>
+      </section>
+
       <div class="room-board-sets">
         <p>Mais de 300 acomodações · 26 de jun. - 27 de jun. · 1 hóspede</p>
         <h1>Acomodações em São Paulo</h1>
@@ -68,22 +97,21 @@
         <button>Mais filtros</button>
       </div>
 
-      <!--  Romms Available Cards JSON Start-->
-      <div id="the-rooms">Carregando...</div>
-      <!-- Romms Available Cards JSON End -->
 
-      <!-- `<div class="room-board-card">
-                  <div class="room-board-card">
-									<div class="room-div-img"><img class="room-img" src="${room.photo}" class="room-img"/></div>
-									<div class="room-description">
-									<div class="room-type"><p>${room.property_type}</p> <spam> <i onclick="myFunction(this)" class="far fa-heart"></i><spam></div>
-									<div class="room-name"><p>${room.name}</p></div>
-									<div class="room-price"><p><strong>R$ ${room.price}</strong>/noite</p></div>
-									</div>
-									</div>
-									<hr>
-      -->
+      <div class="card-wrapper">
 
+        <div class="the-rooms"></div>
+        <!--container onde os cards serão renderizados-->
+      </div>
+      <div class="pagination-wrapper">
+        <div class="pagination"></div>
+        <!--container com os botões de paginação-->
+      </div>
+      <div id="map"></div>
+      <!--div onde será renderizado o mapa do google maps-->
+      <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIvcx5cy5PABB0o2AqygXFbYCLQUmmFeM&callback=initMap"></script>
+      <!--script do google maps-->
 
     </section>
 
@@ -113,6 +141,8 @@
 
 
 
+  <!--import do código Javascript-->
+  <script src="script/paginated.js"></script>
   <script src="script/script.js"></script>
   <script src="script/likeclick.js"></script>
   <script src="script/mymap.js"></script>
